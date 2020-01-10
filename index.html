@@ -10,63 +10,89 @@
  body{
    margin: 0;
    padding:0;
-   height: 100vh;
+   height: 500px;
    background: #050210;
    align-items: center;
    justify-content: center;
    display: flex;
  }
- .box{
-    
-    position:relative;
+ 
+
+ .box {
+  
+    position:fixed;
     width: 250px;
     height: 250px;
     border-radius: 50%;
     background: linear-gradient(#fb5dad ,#55fb9f ,#b97aff );
   
    animation: animate 0.6s linear infinite;
- }
+   
+ } 
+ .box span{
+      
+     filter: blur(400px);
+      position:absolute;
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(#55fb9f , #fb5dad) ;
+    
+}
 
  @keyframes animate 
  {
 0% {transform: rotate(0deg);}
+50% {transform: rotate(180deg);}
 100% {transform: rotate(360deg);}
 
  }
- .box span{
-    filter: blur(85px);
-    position:absolute;
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
-    background: linear-gradient(#fb5dad ,#55fb9f ,#b97aff );
-}
-
  
- .box::after{
-  
-   position: absolute;
+
+.box::before{ 
+   position: fixed;
    content: '';
    top:25px;
    left:25px;
    right: 25px;
    bottom: 25px;
-   background:black;
+   background:#050210 ;
    border-radius: 50%;
+   
+   }
 
- }
- 
- 
- 
- 
- 
+   .box::after{
+    filter: opacity(0.5);
+     animation: avdo 1.9s linear infinite;
+    position: fixed;
+   content: '';
+   top:25px;
+   left:25px;
+   right: 25px;
+   bottom: 25px;
+   background:#050210 ;
+   border-radius: 50%;
+   }
+  
+   
+
+   @keyframes avdo {
+
+ 0% {transform: scale(0.1 ,0.1);}
+33% {transform: scale(0.33 ,0.33);}
+66% {transform: scale( 0.66 , 0.66);}
+100%{transform: scale( 1 , 1);}
+   }
+
 
 </style>
-<body>
+ <body>
+   <div class="box1"></div>
   <div  class="box">
     <span></span>
+    <span></span>
+    
   </div>
 
   
-</body>
-</html>
+ </body>
+ </html>
